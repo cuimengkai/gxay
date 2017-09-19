@@ -1,0 +1,171 @@
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+::-webkit-scrollbar  
+{  
+    width: 0px;  
+    height: 0px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{  
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);  
+    border-radius: 10px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 10px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: #555;  
+}  
+
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+textarea { -webkit-appearance: none;}   
+
+html,body{
+     margin: 0;
+    padding: 0;
+    background-color: #161E2C;
+    font-family: 'Open Sans', sans-serif;
+    overflow-y: scroll;
+}
+
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clear{
+    zoom:1;
+}
+
+.back_img{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.margin{
+    margin: 0 auto;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.paddingTop{
+    padding-top: 1.95rem;
+}
+
+//这里还是有问题
+// img:after { 
+//   background-image: url(http://localhost:3000/static/system/placeholder.jpg);
+//   /*display: block;*/
+//   position: absolute;
+//   z-index: 2;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   content: '';
+//   /*width: 100%;
+//   height: 100%;*/
+//   background-size: cover;
+//   background-color: #fff;
+// }
+.el-dialog__wrapper{
+    font-size: 20px;
+}
+
+.search-result-highlight{
+    font-style:normal;
+    color: #ea6f5a
+}
+label{
+    margin-bottom: 0px;
+}
+
+.loadMore{
+    background: #ea6f5a;
+    margin: 10px 10px;
+    color: white;
+    font-size: 18px;
+    padding: 4px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.loadMoreDiv{
+    text-align: center;
+    font-size: 18px;
+}
+.loadmoreButton{
+    width: 90%;
+    background: lightgray !important;
+    color: white ;
+}
+
+.el-dialog{
+    min-width: 300px;
+}
+.image-package{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.image-package img{
+    width: 90%
+}
+h1{
+    font-size: 40px ;
+}
+
+h2{
+    font-size: 37px ;
+}
+h3{
+    font-size: 34px ;
+}
+
+h4{
+    font-size: 31px ;
+}
+h5{
+    font-size: 28px ;
+}
+h6{
+    font-size: 25px ;
+}
+p{
+    margin-bottom: 15px;
+}
+ul{
+    margin-bottom: 15px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    margin-bottom: 0.25rem
+}
