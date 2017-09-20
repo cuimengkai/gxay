@@ -2,11 +2,11 @@
 
 ## gxay地址和使用
 
-http://127.0.0.1/#/
+http://127.0.0.1:8088/#/
 前台
 账号： cuitrek@163.com  密码: 123qwe
 
-http://127.0.0.1/#/manage
+http://127.0.0.1:8088/#/manage
 后台
 账号： admin  密码: 123qwe
 

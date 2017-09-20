@@ -1,0 +1,8 @@
+/node_modules
+/static/.DS_Store
+/static/img/.DS_Store
+/src/plugins/.DS_Store
+/server/.DS_Store
+/src/.DS_Store
+/.DS_Store
+/server/static/.DS_Store

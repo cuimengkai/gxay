@@ -3,7 +3,7 @@
       <div class="login-body">
           <div class="ms-login">
               <div class="blog-login-title">
-                  ZOE Blog后台
+                  国信安邮官网后台
               </div>
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" >
                 <el-form-item prop="username">
@@ -14,7 +14,7 @@
                     @keyup.enter.native="submitForm('ruleForm')"></el-input>
                 </el-form-item>
                 <el-form-item  style="margin-bottom: 10px;height: 50px;">
-                   <a   class="loginAction">忘记密码？ 请联系网站作者</a>
+                   <!-- <a class="loginAction">忘记密码？ 请联系网站作者</a> -->
                 </el-form-item>
                 <div class="login-btn">
                     <el-button type="primary" @click="submitForm('ruleForm')" >登录</el-button>
@@ -76,11 +76,12 @@ import {login} from '../../store/manageService'
 
 <style scoped>
 .login-body{
-
-    width:100%;
-    height:100vh;
-    top:0;
-    background: rgba(1, 1, 1, 0.5)
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    position: absolute;
+    background: url(http://localhost:3000/static/img/pc_loginBg.jpg);
 }
 .ms-title{
     position: absolute;
@@ -113,7 +114,7 @@ import {login} from '../../store/manageService'
     text-align: center;
 }
 .login-btn button{
-    width:100%;
+    width:40%;
     height:36px;
 }
 .loginAction{
