@@ -1,16 +1,19 @@
 
 <template>
     <div class="header">
-        <div class="logo">后台管理系统</div>
+        <div class="logo">
+            <img :src="logoImage">
+        </div>
         <div class="user-info">
             <el-dropdown trigger="click" @command="handleCommand">
-                <span class="el-dropdown-link">
-                    <img class="user-logo" :src="userImage">
-                    {{username}}
+                <span class="el-dropdown-link"><i class="el-icon-setting"></i>
+                    <!-- <img class="user-logo" :src="userImage"> -->
+                     {{username}}
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item command="clearCache">清空缓存</el-dropdown-item>
-                    <el-dropdown-item command="loginout">退出</el-dropdown-item>
+                    <!-- <el-dropdown-item command="clearCache">清空缓存</el-dropdown-item> -->
+                    <el-dropdown-item command="loginout"><i class="el-icon-document"></i> 修改</el-dropdown-item>
+                    <el-dropdown-item command="loginout"><i class="el-icon-upload2"></i> 注销</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
         </div>
@@ -30,6 +33,10 @@
            userImage:{
                type: String,
                default:''
+           },
+           logoImage:{
+            type:String,
+            default:'http://127.0.0.1:3000/static/img/logo.png'
            }
         },
         computed:{
@@ -38,13 +45,13 @@
         methods:{
             handleCommand(command) {
                 if(command == 'loginout'){
-                    clearStore()
+                    // clearStore()
                     this.$router.replace('/managelogin');
                 }
-                else if(command == 'clearCache'){
-                    clearStoreExcept('m_token')
-                    toast(this,'缓存清除成功')
-                }
+                // else if(command == 'clearCache'){
+                //     clearStoreExcept('m_token')
+                //     toast(this,'缓存清除成功')
+                // }
             }
         }
     }

@@ -48,6 +48,13 @@ const managerSetting = r => require.ensure([], () => r(require('../page/backstag
 
 const managerSettingInfo = r => require.ensure([], () => r(require('../page/backstage/managerSettingInfo')), 'managerSettingInfo')
 
+const messageAdd = r => require.ensure([], () => r(require('../page/backstage/messageAdd')), 'messageAdd')
+
+const news = r => require.ensure([], () => r(require('../page/backstage/news')), 'news')
+
+const industry = r => require.ensure([], () => r(require('../page/backstage/industry')), 'industry')
+
+
 export default [{
         path: '/',
         component: index, //顶层路由，对应index.html
@@ -170,6 +177,18 @@ export default [{
             {
                 path: 'managerSettingInfo/:id',
                 component: managerSettingInfo
+            },
+            {
+                path: 'messageAdd',
+                component: messageAdd
+            },
+            {
+                path: 'news',
+                component: news
+            },
+            {
+                path: 'industry',
+                component: industry
             },
         ]
     },

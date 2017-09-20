@@ -3,9 +3,9 @@
             <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" @select = "selectMenu" >
                 <el-submenu index="1" >
                     <template slot="title"><i class="el-icon-menu"></i>信息管理</template>
-                    <el-menu-item index="summary"><i class="el-icon-setting"></i>添加信息</el-menu-item>
-                    <el-menu-item index="manageUser"><i class="el-icon-setting"></i>安邮新闻列表</el-menu-item>
-                    <el-menu-item index="manageArticle"><i class="el-icon-setting"></i>业界动态列表</el-menu-item>
+                    <el-menu-item index="messageAdd"><i class="el-icon-setting"></i>添加信息</el-menu-item>
+                    <el-menu-item index="news"><i class="el-icon-setting"></i>安邮新闻列表</el-menu-item>
+                    <el-menu-item index="industry"><i class="el-icon-setting"></i>业界动态列表</el-menu-item>
                     <el-menu-item index="manageComment"><i class="el-icon-setting"></i>成功案例列表</el-menu-item>
                     <el-menu-item index="manageFile"><i class="el-icon-setting"></i>关于我们列表</el-menu-item>
                 </el-submenu>
@@ -28,11 +28,9 @@
                     <el-menu-item index="managerSetting"><i class="el-icon-setting"></i>管理日志</el-menu-item>
                 </el-submenu>
             </el-menu>
-        <copyRight></copyRight>
     </div>
 </template>
 <script>
-import copyRight from './copyRight'
     export default {
         computed:{
             onRoutes(){
@@ -54,10 +52,7 @@ import copyRight from './copyRight'
                 handleOpen(key, keyPath) {
                 },
                handleClose(key, keyPath) {
-                },
-        },
-        components:{
-            copyRight
+                }
         }
     }
 </script>
