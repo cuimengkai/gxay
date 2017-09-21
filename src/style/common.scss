@@ -1,84 +1,99 @@
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 
-/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
-::-webkit-scrollbar  
-{  
-    width: 0px;  
-    height: 0px;  
-    background-color: #F5F5F5;  
-}  
-  
-/*定义滚动条轨道 内阴影+圆角*/  
-::-webkit-scrollbar-track  
-{  
-    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);  
-    border-radius: 10px;  
-    background-color: #F5F5F5;  
-}  
-  
-/*定义滑块 内阴影+圆角*/  
-::-webkit-scrollbar-thumb  
-{  
-    border-radius: 10px;  
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
-    background-color: #555;  
-}  
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
 
-input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
+
+
+
+
+
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+input[type="reset"] {
     -webkit-appearance: none;
 }
 
-textarea { -webkit-appearance: none;}   
+textarea {
+    -webkit-appearance: none;
+}
 
-html,body{
-     margin: 0;
+html,
+body {
+    margin: 0;
     padding: 0;
-    background-color: #161E2C;
     font-family: 'Open Sans', sans-serif;
     overflow-y: scroll;
 }
 
-.clear:after{
+.clear:after {
     content: '';
     display: block;
     clear: both;
 }
 
-.clear{
-    zoom:1;
+.clear {
+    zoom: 1;
 }
 
-.back_img{
+.back_img {
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
-.margin{
+.margin {
     margin: 0 auto;
 }
 
-.left{
+.left {
     float: left;
 }
 
-.right{
+.right {
     float: right;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
-.show{
+.show {
     display: block;
 }
 
-.ellipsis{
+.ellipsis {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.paddingTop{
+.paddingTop {
     padding-top: 1.95rem;
 }
 
@@ -98,74 +113,94 @@ html,body{
 //   background-size: cover;
 //   background-color: #fff;
 // }
-.el-dialog__wrapper{
+.el-dialog__wrapper {
     font-size: 20px;
 }
 
-.search-result-highlight{
-    font-style:normal;
-    color: #ea6f5a
+.search-result-highlight {
+    font-style: normal;
 }
-label{
+
+label {
     margin-bottom: 0px;
 }
 
-.loadMore{
+.loadMore {
     background: #ea6f5a;
     margin: 10px 10px;
-    color: white;
     font-size: 18px;
     padding: 4px;
     text-align: center;
     border-radius: 5px;
 }
 
-.loadMoreDiv{
+.loadMoreDiv {
     text-align: center;
     font-size: 18px;
 }
-.loadmoreButton{
+
+.loadmoreButton {
     width: 90%;
     background: lightgray !important;
-    color: white ;
+    color: white;
 }
 
-.el-dialog{
+.el-dialog {
     min-width: 300px;
 }
-.image-package{
+
+.image-package {
     text-align: center;
     margin-bottom: 30px;
 }
-.image-package img{
+
+.image-package img {
     width: 90%
 }
-h1{
-    font-size: 40px ;
+
+h1 {
+    font-size: 40px;
 }
 
-h2{
-    font-size: 37px ;
-}
-h3{
-    font-size: 34px ;
+h2 {
+    font-size: 37px;
 }
 
-h4{
-    font-size: 31px ;
+h3 {
+    font-size: 34px;
 }
-h5{
-    font-size: 28px ;
+
+h4 {
+    font-size: 31px;
 }
-h6{
-    font-size: 25px ;
+
+h5 {
+    font-size: 28px;
 }
-p{
+
+h6 {
+    font-size: 25px;
+}
+
+p {
     margin-bottom: 15px;
 }
-ul{
+
+ul {
     margin-bottom: 15px;
 }
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-bottom: 0.25rem
 }

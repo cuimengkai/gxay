@@ -21,7 +21,10 @@
      height: 50px;
      color: deepskyblue;
      margin: 20px 0px;
-
+     box-sizing: border-box;
+     position: absolute;
+     bottom: 0;
+     width: 100%;
  }
   .blogFoot span:hover{
       cursor: pointer;

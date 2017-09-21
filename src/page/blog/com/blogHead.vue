@@ -2,9 +2,9 @@
 <template>
     <div class="blogheader">
         <div class="bloglogo" @click="toMain">
-                 <img src="/static/img/zoe_logo.jpg" alt="">
+                 <img src="/static/img/logo.png" alt="">
          </div>
-         <div class="rightMenu">
+        <!--  <div class="rightMenu">
              
             <el-input  class="searchInput" placeholder="搜索" icon="search" v-model="keyword"
              :on-icon-click="handleIconClick" @keyup.enter="handleIconClick"> </el-input>
@@ -28,11 +28,12 @@
             </el-dropdown>
             </div>
         </div>
-    
+     -->
     </div>
 </template>
 
 <script>
+
     export default {
         data() {
             return{
@@ -111,7 +112,8 @@
           isLogin(){
               return !isEmpty(this.userInfo)
           },
-      }
+      },
+      
     }
 </script>
 <style scoped>
@@ -125,6 +127,7 @@
       position: fixed;
       background: #161E2C;
       z-index: 100;
+      height: 10%;
  }
 
  .bloglogo img {

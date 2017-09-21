@@ -54,6 +54,33 @@ const news = r => require.ensure([], () => r(require('../page/backstage/news')),
 
 const industry = r => require.ensure([], () => r(require('../page/backstage/industry')), 'industry')
 
+const casebook = r => require.ensure([], () => r(require('../page/backstage/casebook')), 'casebook')
+
+const aboutwe = r => require.ensure([], () => r(require('../page/backstage/aboutwe')), 'aboutwe')
+
+const appAdd = r => require.ensure([], () => r(require('../page/backstage/appAdd')), 'appAdd')
+
+const appList = r => require.ensure([], () => r(require('../page/backstage/appList')), 'appList')
+
+const apply = r => require.ensure([], () => r(require('../page/backstage/apply')), 'apply')
+
+const userList = r => require.ensure([], () => r(require('../page/backstage/userList')), 'userList')
+
+const user = r => require.ensure([], () => r(require('../page/backstage/user')), 'user')
+
+const logList = r => require.ensure([], () => r(require('../page/backstage/logList')), 'logList')
+
+const imgFile = r => require.ensure([], () => r(require('../page/backstage/imgFile')), 'imgFile')
+
+const videoFile = r => require.ensure([], () => r(require('../page/backstage/videoFile')), 'videoFile')
+
+const jobAdd = r => require.ensure([], () => r(require('../page/backstage/jobAdd')), 'jobAdd')
+
+const jobList = r => require.ensure([], () => r(require('../page/backstage/jobList')), 'jobList')
+
+const awardsAdd = r => require.ensure([], () => r(require('../page/backstage/awardsAdd')), 'awardsAdd')
+
+const awardsList = r => require.ensure([], () => r(require('../page/backstage/awardsList')), 'awardslist')
 
 export default [{
         path: '/',
@@ -189,6 +216,62 @@ export default [{
             {
                 path: 'industry',
                 component: industry
+            },
+            {
+                path: 'casebook',
+                component: casebook
+            },
+            {
+                path: 'aboutwe',
+                component: aboutwe
+            },
+            {
+                path: 'appAdd',
+                component: appAdd
+            },
+            {
+                path: 'appList',
+                component: appList
+            },
+            {
+                path: 'apply',
+                component: apply
+            },
+            {
+                path: 'user',
+                component: user
+            },
+            {
+                path: 'userList',
+                component: userList
+            },
+            {
+                path: 'logList',
+                component: logList
+            },
+            {
+                path: 'imgFile',
+                component: imgFile
+            },
+            {
+                path: 'videoFile',
+                component: videoFile
+            },
+            {
+                path: 'jobAdd',
+                component: jobAdd
+            },
+            {
+                path: 'jobList',
+                component: jobList
+            },
+            {
+                path: 'awardsAdd',
+                component: awardsAdd
+            },
+            {
+                path: 'awardsList',
+                component: awardsList
             },
         ]
     },

@@ -8,6 +8,8 @@
 </template>
 <script>
 import blogHeader from './page/blog/com/blogHead.vue'
+
+
   export default {
     data() {
       return {
@@ -48,7 +50,7 @@ import blogHeader from './page/blog/com/blogHead.vue'
     },
    
     components:{
-        blogHeader
+        blogHeader,
     },
  
 
