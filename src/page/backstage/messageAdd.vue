@@ -3,7 +3,7 @@
       <div class="featureTitle">
       </div>
       <div style="font-size: 20px;height: 30%;width:60%;margin-left:15%;">
-          <el-form  :model="message" :rules="rules" ref="message" label-width="15%" style="height: 80%"  >
+          <el-form :model="message" :rules="rules" ref="message" label-width="15%" style="height: 80%"  >
                 <el-form-item prop="title" label="标题">
                     <el-input v-model="message.title" placeholder="标题" ></el-input>
                 </el-form-item>
@@ -13,20 +13,19 @@
                 <el-form-item prop="issuer" label="发布者">
                     <el-input v-model="message.issuer" placeholder="发布者" ></el-input>
                 </el-form-item>
-                <el-form-item prop="sort" label="排序号">
-                    <el-input type="sort" v-model.number="message.sort" placeholder="排序号" ></el-input>
+                <el-form-item prop="sort" label="排序号" :rules="[{ required: true, message: '排序号不能为空'},{ type: 'number', message: '排序号必须为数字值'}]">
+                  <el-input type="sort" v-model.number="message.sort" auto-complete="off"></el-input>
                 </el-form-item>
-                <el-form-item prop="imgUrl" label="上传图片">
-                    <el-upload
-                      class="upload-demo"
-                      action="https://jsonplaceholder.typicode.com/posts/"
-                      :on-preview="handlePreview"
-                      :on-remove="handleRemove"
-                      :file-list="fileList"
-                      list-type="picture">
-                      <el-button size="small" type="primary">点击上传</el-button>
-                      <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-                    </el-upload>
+                <el-form-item prop="file" label="上传图片">
+                   <el-upload class="upload-demo"
+                    action="https://jsonplaceholder.typicode.com/posts/"
+                    :on-preview="handlePreview"
+                    :on-remove="handleRemove"
+                    :file-list="message.fileList"
+                    list-type="picture">
+                    <el-button size="small" type="primary">点击上传</el-button>
+                    <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                  </el-upload>
                 </el-form-item>
                 <el-form-item prop="type" label="信息分类">
                 <template>
@@ -46,18 +45,12 @@
                   <el-radio class="radio" v-model="message.isIssure" label="2">不显示</el-radio>
                 </template>
             </el-form-item>
-            <el-form-item prop="dateIssure" label="创建时间">
-                 <el-date-picker
-                  v-model="message.dateIssure"
-                  type="date"
-                  placeholder="选择日期"
-                  :picker-options="pickerOptions1">
-            </el-date-picker>
-            </el-form-item>
+            <el-form-item label="内容" prop="content">
                 <vue-html5-editor :content="message.content" @change="updateData" ></vue-html5-editor>
-                <div class="handleArticleClass" >
-                    <el-button class="editor-btn" type="primary" @click="save()">发布</el-button>
-                    <el-button v-if="messageId>0" class="editor-btn" type="primary" @click="cancle">取消</el-button>
+            </el-form-item>
+            <div class="handleArticleClass" >
+                    <el-button class="editor-btn" type="primary" @click="saveForm('message')">发布</el-button>
+                    <el-button class="editor-btn" type="primary" @click="resetForm('message')">重置</el-button>
                 </div>
             </el-form>
       </div>
@@ -82,30 +75,20 @@
                   ],
                   issuer:[
                           { required: true, message: '请输入发布者!', trigger: 'blur' },
-                  ],
-                  sort:[
-                          { required: true, message: '排序号不能为空!',trigger: 'blur'},
-                          { type: 'number', message: '排序号必须为数字值!',trigger: 'blur'}
-                  ],
-                  dateIssure:[
-                       { required: true, message: '创建时间不能为空!',trigger: 'blur'},   
                   ]
-
 
                 },
                 message:{
-                  type: '1',
-                  dateIssure: '',
+                  title:'',
                   describe: '',
                   issuer: '',
-                  sort:'',
+                  sort: '',
+                  fileList:[],
+                  type: '1',
+                  dateIssure: new Date(),
                   isIssure: '1',
                   content: '',
-                  messageId: 0,
                 },
-                  title: '',
-                  
-              
                 options: [{
                       value: '1',
                       label: '安邮新闻'
@@ -119,12 +102,7 @@
                       value: '4',
                       label: '关于我们'
                     }],
-                fileList:[],
-                pickerOptions1:{
-                  disabledDate(time) {
-                    return time.getTime() < Date.now() - 8.64e7;
-                  }
-                },
+              
             }
         },
         //async mounted(){
@@ -155,13 +133,19 @@
         // },
         methods:{
             updateData(data){
-                this.content = data
+                this.message.content = data
             },
-            save(formName,mode){
-
+            saveForm(formName){
+              this.$refs[formName].validate((valid) => {
+                if (valid){
+                  console.info(this.message);
+                } else {
+                  return false;
+                }
+              });
             },
-             cancle(){
-                this.$router.replace('/manage/manageArticle');
+            resetForm(formName) {
+              this.$refs[formName].resetFields();
             },
             handlePreview(file) {
                 console.log(file);
@@ -169,9 +153,6 @@
             handleRemove(file, fileList) {
                 console.log(file, fileList);
               },
-            pickerOptions(){
-
-            },
             // selectTag(tag){
             //     let index = this.selectedTags.findIndex(s=>{
             //         return s.tag_id == tag.tag_id
