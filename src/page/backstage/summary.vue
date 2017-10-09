@@ -1,58 +1,12 @@
 <template>
     <div>
        <div class="featureTitle">
-          仪表盘
+          默认首页
         </div>
        <div class="meterContentClass">
-           <div class="meterMenu">
-               <div class="articleStatus">
-                   <img  src="static/img/pen.jpeg" alt="">
-                   <div >
-                        <span>用户发表了</span>
-                        <span class="meterMenuCount">{{meter.articleCount}}</span>
-                        <span>篇文章</span>
-                   </div>    
-               </div>
-               <div class="articleStatus">
-                   <img src="static/img/text.jpeg" alt="">
-                   <div>
-                        <span>一共收到了</span>
-                        <span class="meterMenuCount">{{meter.commentCount}}</span>
-                        <span>条留言</span>
-                   </div>
-               </div>
-               <div class="articleStatus">
-                   <img src="static/img/file.jpeg" alt="">
-                   <div>
-                       <span>用户上传了</span>
-                       <span class="meterMenuCount">{{meter.fileCount}}</span>
-                       <span>个文件</span>
-                   </div>
-               </div>
-           </div>
+           
           <div class="newestList" > 
-            <div style="width: 49%" >
-                <div class="newestTitle" >
-                    最新文章
-                </div>
-                <div class="newestArticleTitle">
-                  <div v-for="artilce in meter.newArticle">
-                      <a @click="toArticle(artilce)">{{artilce.article_name}}</a>
-                  </div>
-                   
-                </div>
-            </div>
-
-            <div style="width: 49%" >
-                <div class="newestTitle">
-                    最新留言(评论)
-                </div>
-                <div  class="newestArticleTitle">
-                     <div v-for="comment in meter.newComment">
-                     <a>{{comment.commenter}}</a>  <a style="color: #222">于{{formatData(comment.comment_time)}}</a> 说:<a>{{comment.comment_content}}</a>
-                  </div>
-                </div>
-            </div>
+          
         </div>
        </div>
 

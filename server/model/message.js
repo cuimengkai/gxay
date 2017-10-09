@@ -6,4 +6,4 @@ class Message {
 
     }
 }
-module.exports = Article
+module.exports = Message

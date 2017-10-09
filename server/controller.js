@@ -1,6 +1,5 @@
-
 const fs = require('fs');
-const koaBody = require('koa-body')({formidable:{uploadDir: __dirname + `/static/tmp`},multipart:true,formLimit:10000000});
+const koaBody = require('koa-body')({ formidable: { uploadDir: __dirname + `/static/tmp` }, multipart: true, formLimit: 10000000 });
 // add url-route in /controllers:
 
 function addMapping(router, mapping) {
@@ -11,11 +10,12 @@ function addMapping(router, mapping) {
             console.log(`register URL mapping: GET ${path}`);
         } else if (url.startsWith('POST ')) {
             var path = url.substring(5);
-            router.post(path,koaBody, mapping[url]);
+            router.post(path, koaBody, mapping[url]);
             console.log(`register URL mapping: POST ${path}`);
+
         } else if (url.startsWith('PUT ')) {
             var path = url.substring(4);
-            router.put(path,koaBody, mapping[url]);
+            router.put(path, koaBody, mapping[url]);
             console.log(`register URL mapping: PUT ${path}`);
         } else if (url.startsWith('DELETE ')) {
             var path = url.substring(7);
@@ -37,7 +37,7 @@ function addControllers(router, dir) {
     });
 }
 
-module.exports = function (dir) {
+module.exports = function(dir) {
     let
         controllers_dir = dir || 'controllers',
         router = require('koa-router')();

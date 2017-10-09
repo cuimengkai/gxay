@@ -84,7 +84,7 @@ const awardsList = r => require.ensure([], () => r(require('../page/backstage/aw
 
 export default [{
         path: '/',
-        component: index, //顶层路由，对应index.html
+        component: manage, //顶层路由，对应index.html
 
     },
     {
