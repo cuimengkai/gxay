@@ -59,8 +59,6 @@
 <script>
  import {saveMessage} from '../../store/service'
 // import {articleById} from '../../store/manageService'
-//wait to do auto save feature
-
     export default {
         data: function(){
             return {

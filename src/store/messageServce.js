@@ -9,6 +9,5 @@ const HostName = baseUrl
 
 export const saveMessage = (message) => {
     let url = HostName + 'message/' + createMtoken();
-    console.info(JSON.stringify(message));
     return setpromisePost(url, message);
 }
